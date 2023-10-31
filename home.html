@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Welcome to CPS3740 project demo</title>
+    <style>
+      :root {
+        --background-color: #0a153b;
+        --primary-color: #591313;
+        --text-color: white;
+      }
+      body {
+        background-color: var(--background-color);
+      }
+      .title {
+        color: white;
+        display: flex;
+        justify-content: center;
+        background-color: var(--primary-color);
+        max-width: 70%;
+        padding: 2rem;
+        border-radius: 1rem;
+      }
+      .title_exterior {
+        display: flex;
+        justify-content: center;
+      }
+      .search {
+        color: var(--text-color);
+      }
+      .LogIn {
+        color: var(--text-color);
+      }
+      .text {
+        color: var(--text-color);
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <br />
+    <div class="title_exterior">
+      <h1 class="title">Welcome to Anthony Bollas CPS3740 project.</h1>
+    </div>
+    <br />
+    <br /><a href="view_customers.php" target="_blank">View all customers</a>
+
+    <div class="search">
+      <br />Search product name (enter * to show all products):
+      <form action="search_products.php" method="get">
+        <input type="text" name="myproduct" required />
+        <input type="submit" value="Search" />
+      </form>
+      <br />
+    </div>
+
+    <div>
+      <form class="logIn" action="login.php" method="post">
+        Login ID: <input type="text" name="username" required="required" />
+        <br />Password:
+        <input type="password" name="password" required="required" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <div class="text">
+      <hr />
+      Below is just for reference, NOT part of the project.
+      <br />
+      You should download the following files for the projects, and rename their
+      extensions to *.php.
+      <ul>
+        <li>
+          <a href="dbconfig.txt">dbconfig</a> - set up your database environment
+          variables for the projects.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

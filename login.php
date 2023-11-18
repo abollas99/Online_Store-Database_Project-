@@ -21,6 +21,7 @@ if ($result) {
 		$row = mysqli_fetch_array($result);
 		$user_password=$row['password'];
 		if ($browser_password==$user_password) {
+            $user_id=$row['id'];
 			$user_name=$row['name'];
             $user_gender=$row['gender'];
             $user_img=$row['img'];
@@ -51,7 +52,9 @@ if ($result) {
             echo "<br>DOB: $user_DOB, age: $user_age";
             echo "<br>Address: $user_street, $user_city, $user_state, $user_zip";
             echo '<br><img src="data:image/jpeg;base64,' . base64_encode($user_img) . '">';
-            echo '<br><a href="">Logout</a><br><a href="order_product.php">Order Product</a><br><a href=>view, change, or cancle my order history</a>';
+            echo '<br><a href="">Logout</a>
+            <br><a href="order_product.php?cid='.$user_id.'" method="post" >Order Product</a>
+            <br><a href=>view, change, or cancle my order history</a>';
 		} else {
 			die("Login $browser_username exists, but password does not match");
 		}
